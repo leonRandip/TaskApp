@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #ffffff;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23080809' fill-opacity='0.66'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+            overflow: hidden;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .wrapper{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            width: 300px;
+            height: 360px;
+            background-color: white;
+            border: solid #333 2px;
+            padding: 10px;
+        }
+        .input {
+            width: 220px;
+            height: 44px;
+            margin-top: 10px;
+            margin-left: 20px;
+            background-color: #05060f0a;
+            border-radius: .5rem;
+            padding: 0 1rem;
+            border: 2px solid transparent;
+            font-size: 1rem;
+            transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+        }
+
+        .label {
+            display: block;
+            margin-top: 10px;
+            margin-left: 20px;
+            margin-bottom: .3rem;
+            font-size: .9rem;
+            font-weight: bolder;
+            color: #05060f99;
+            transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+        }
+
+        .input:hover, .input:focus, .input-group:hover .input {
+            outline: none;
+            border-color: #05060f;
+        }
+
+        .input-group:hover .label, .input:focus {
+            color: #05060fc2;
+        }
+        .Login{
+            margin-left: 20px;
+            margin-top: 40px;
+            padding: 15px;
+            width: 260px;
+            background-color:black;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+        }
+        .Login:hover{
+            background-color: #FAF9F6;
+            color: black;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <form id="loginform" onsubmit="Login(event)">
+        <div class="card">
+            <h1 style="text-align: center; margin-bottom: 20px;">Login</h1>
+            <label class="label" for="user">Username:</label>
+            <input type="text" id="user" class="input"/>
+            <label class="label" for="password">Password:</label>
+            <input type="password" id="password" class="input"/>
+            <button type="submit" class="Login">Login</button>
+        </div>
+        </form>
+    </div>
+</body>
+<script src="login.js" ></script>
+</html>

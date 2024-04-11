@@ -1,0 +1,28 @@
+[
+  {
+    "email": "abc@gmail.com",
+    "name": "John",
+    "password": "12345"
+  },
+  {
+    "id": 2,
+    "name": "Alice",
+    "age": 25
+  },
+  {
+    "id": 3,
+    "name": "Bob",
+    "age": 35
+  },
+  {
+    "id": 4,
+    "name": "Emma",
+    "age": 28
+  },
+  {
+    "id": 5,
+    "name": "Michael",
+    "age": 32
+  }
+]
+

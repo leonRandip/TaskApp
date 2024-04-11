@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family:'Courier New', Courier, monospace;
+            margin: 20px;
+            background-color: #ffffff;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23080809' fill-opacity='0.66'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        .wrap{
+            background-color: white;
+            
+        }
+        button{
+            font-family:'Courier New', Courier, monospace;
+            font-weight: bolder;
+        }
+        header{
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+        .database{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .filter{
+            margin-top: 30px;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 10px;
+        }
+        .mainbod{
+            display: flex;
+            margin-top: 20px;
+            padding: 10px;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+        table{
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        input {
+            width: 220px;
+            height: 44px;
+            margin-top: 10px;
+            background-color: #05060f0a;
+            border-radius: .5rem;
+            padding: 0 1rem;
+            border: 2px solid transparent;
+            font-size: 1rem;
+            transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+        }
+
+        .label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: .3rem;
+            font-size: .9rem;
+            font-weight: bolder;
+            color: #05060f99;
+            transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+        }
+
+        input:hover, .input:focus, .input-group:hover .input {
+            outline: none;
+            border-color: #05060f;
+        }
+
+        input-group:hover .label, .input:focus {
+            color: #05060fc2;
+        }
+        .Login{
+            margin-left: 20px;
+            margin-top: 40px;
+            padding: 15px;
+            width: 260px;
+            background-color:black;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+        }
+        td{
+            padding: 10px;
+            width: 200px;
+        }
+        th{
+            padding: 10px;
+            width: 200px;
+        }
+        button{
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: black;
+            color: white;
+        }
+        #content{
+            height: 50px;
+            padding: 5px;
+            margin-top: 100px;
+            border: 2px solid wheat;
+            margin-bottom: 10px;
+            border-radius: 50px;
+            color: white;
+            background-color: black;
+        }
+        select {
+            appearance: none;
+            border: 0;
+            outline: 0;
+            font: inherit;
+            margin-left: 5px;
+            width: 20rem;
+            padding: 1rem 4rem 1rem 1rem;
+            background: black no-repeat right 0.8em center / 1.4em,
+                linear-gradient(to left, black 3em, black 3em);
+            color: black;
+            border-radius: 0.25em;
+            box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+
+        }
+            &::-ms-expand {
+                display: none;
+  }
+  &:focus {
+    outline: none;
+  }
+  option {
+    color: black;
+    background-color: black;
+  }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+    <header><h1>Task Manager</h1></header>
+
+<div class="mainbod">
+    <div id="content">
+    <div id="content2"></div>
+    <button style="margin-left: 30px;" id="start">Start</button>
+   <button id="stop">Stop</button>
+   <button  id="reset">Reset</button></div>
+    <form>
+        <label class="label" for="name">Category:</label>
+        <input type="text" id="name" placeholder="Enter Category"/>
+        <label class="label">Subcategory:</label>
+        <input type="text" id="task" placeholder="Enter Subcategory"/>
+        <label class="label">Task:</label>
+        <input type="text" id="age" placeholder="Enter Task"/>
+        <br/>
+        <button class="subbtn" id="subbtn" type="submit">Submit</button>
+    </form>
+    </div>
+    <div class="filter">   
+
+<select id="category" class="drop">
+  <option value="all">Sort</option>
+  <option value="private">Work</option>
+  <option value="public">Personal</option>
+</select>
+</div>
+   <div class="database" id="database">
+    <table border="2" id="dataTable">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>SubCategory</th>
+                <th>Task</th>
+                <th>Duration</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+</div>
+   
+
+</body>
+<script src="form.js"></script>
+</html>

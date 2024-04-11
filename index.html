@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Object Filtering</title>
+<style>
+   #objectTable{
+    margin-top: 10px;
+   }
+   .drop{
+    width: auto;
+    padding: 5px;
+    
+   }
+    h2{
+        font-weight: bolder;
+    }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+    <h2>Filter Objects</h2>
+</div>
+
+
+<label for="sort">Sort By:</label>
+<select id="sort" class="drop">
+  <option value="ascending">Ascending</option>
+  <option value="descending">Descending</option>
+</select>
+
+<label for="category">Category:</label>
+<select id="category" class="drop">
+  <option value="all">All</option>
+  <option value="private">Private</option>
+  <option value="public">Public</option>
+</select>
+
+<table id="objectTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody id="objectBody"></tbody>
+</table>
+
+<script>
+  const objects = [
+    { name: "Vina", category: "private", age: 20 },
+    { name: "Gowtham", category: "public", age: 25 },
+    { name: "Randip", category: "private", age: 30 },
+    { name: "Praveen", category: "public", age: 35 },
+    { name: "Linnesh", category: "private", age: 40 }
+  ];
+
+  const sortSelect = document.getElementById('sort');
+  const categorySelect = document.getElementById('category');
+  const objectBody = document.getElementById('objectBody');
+
+  function filterObjects() {
+    const sortBy = sortSelect.value;
+    const category = categorySelect.value;
+    
+    const filteredObjects = category === 'all' ? objects : objects.filter(obj => obj.category === category);
+    
+    filteredObjects.sort((a, b) => {
+      if (sortBy === 'ascending') {
+        return a.age - b.age;
+      } else {
+        return b.age - a.age;
+      }
+    });
+    
+    objectBody.innerHTML = '';
+    filteredObjects.forEach(obj => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${obj.name}</td>
+        <td>${obj.category}</td>
+        <td>${obj.age}</td>
+      `;
+      objectBody.appendChild(row);
+    });
+  }
+
+  filterObjects();
+
+  sortSelect.addEventListener('change', filterObjects);
+  categorySelect.addEventListener('change', filterObjects);
+</script>
+
+</body>
+</html>
